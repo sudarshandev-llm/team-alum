@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Alum</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div id="logo-slot" class="logo" aria-label="Team Alum logo">
+      <span class="logo-text">Team Alum</span>
+    </div>
+    <div class="nav-pills">
+      <button class="nav-pill active" data-page="0" aria-current="page">Home</button>
+      <button class="nav-pill" data-page="1">About</button>
+      <button class="nav-pill" data-page="2">Services</button>
+      <button class="nav-pill" data-page="3">Projects</button>
+      <button class="nav-pill" data-page="4">Ask Us</button>
+      <button class="nav-pill" data-page="5">Contact</button>
+    </div>
+  </nav>
+
+  <!-- ==================== PAGE CONTAINER ==================== -->
+  <main class="page-container" id="page-container">
+
+    <!-- PAGE 0: HOME -->
+    <section class="page active" id="page-home" data-page="0">
+      <div class="page-inner home-inner">
+        <div class="home-blobs">
+          <div class="blob blob-1"></div>
+          <div class="blob blob-2"></div>
+          <div class="blob blob-3"></div>
+        </div>
+        <div class="home-content">
+          <h1 class="home-title">Team Alum</h1>
+          <p class="home-tagline">Building intelligent tools for students.</p>
+          <p class="home-future-note">Alumni AI Beta is our current public release. A fully self-hosted version of Alumni AI is coming next.</p>
+          <button class="btn-clay cta-btn" data-navigate="3">Explore Our Work</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 1: ABOUT / FOUNDERS -->
+    <section class="page" id="page-about" data-page="1">
+      <div class="page-inner about-inner">
+        <h2 class="section-heading stagger-in">The People Behind Team Alum</h2>
+        <div class="founders-grid">
+          <div class="founder-card clay-card stagger-in">
+            <div class="founder-avatar" aria-label="Avatar placeholder for Sudarshan">
+              <span class="avatar-initials">SH</span>
+            </div>
+            <h3 class="founder-name">Sudarshan Sunil Hadmode</h3>
+            <span class="founder-role">Founder</span>
+            <div class="founder-tags">
+              <span class="founder-tag">AI Engineer</span>
+              <span class="founder-tag">Prompt Engineer</span>
+              <span class="founder-tag">Backend Developer</span>
+              <span class="founder-tag">Frontend Developer</span>
+              <span class="founder-tag">UI/UX Designer</span>
+            </div>
+            <p class="founder-bio">Sudarshan is a 17-year-old AI Engineer and Prompt Engineer who works across backend, frontend, and UI/UX development. He focuses on turning ideas into practical digital products, designing intelligent systems, and combining engineering with product thinking.</p>
+          </div>
+          <div class="founder-card clay-card stagger-in">
+            <div class="founder-avatar" aria-label="Avatar placeholder for Soham">
+              <span class="avatar-initials">ST</span>
+            </div>
+            <h3 class="founder-name">Soham Arvind Takale</h3>
+            <span class="founder-role">Co-Founder</span>
+            <div class="founder-tags">
+              <span class="founder-tag">Prompt Engineer</span>
+              <span class="founder-tag">AI Brain Maker</span>
+              <span class="founder-tag">Web Planning</span>
+              <span class="founder-tag">Data Analyst</span>
+            </div>
+            <p class="founder-bio">Soham is a 17-year-old Prompt Engineer and AI Brain Maker focused on designing intelligent workflows, planning web products, structuring AI behavior, and working with data to support better product decisions.</p>
+          </div>
+          <div class="founder-card clay-card stagger-in">
+            <div class="founder-avatar" aria-label="Avatar placeholder for Kaustubh">
+              <span class="avatar-initials">KM</span>
+            </div>
+            <h3 class="founder-name">Kaustubh Vishnudas Mudpe</h3>
+            <span class="founder-role">Server Director</span>
+            <div class="founder-tags">
+              <span class="founder-tag">Server Management</span>
+              <span class="founder-tag">Automation</span>
+              <span class="founder-tag">Infrastructure</span>
+              <span class="founder-tag">Finance</span>
+            </div>
+            <p class="founder-bio">Kaustubh manages Team Alum's server and operational infrastructure. His responsibilities include data-server management, web and application updates, automation, infrastructure operations, and finance management, helping keep Team Alum's digital systems running reliably.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 2: SERVICES -->
+    <section class="page" id="page-services" data-page="2">
+      <div class="page-inner services-inner">
+        <h2 class="section-heading">What We Do</h2>
+        <div class="services-grid">
+          <div class="service-card clay-card">
+            <div class="service-icon-wrap">
+              <span class="service-icon">&#9881;</span>
+            </div>
+            <h3 class="service-title">AI Engineering</h3>
+            <p class="service-desc">Building practical AI-powered systems, assistants, and intelligent workflows.</p>
+          </div>
+          <div class="service-card clay-card">
+            <div class="service-icon-wrap">
+              <span class="service-icon">&#9998;</span>
+            </div>
+            <h3 class="service-title">Prompt Engineering</h3>
+            <p class="service-desc">Designing structured prompts and AI workflows for reliable and useful AI behavior.</p>
+          </div>
+          <div class="service-card clay-card">
+            <div class="service-icon-wrap">
+              <span class="service-icon">&#60;/&#62;</span>
+            </div>
+            <h3 class="service-title">Web Development</h3>
+            <p class="service-desc">Developing modern frontend and backend applications.</p>
+          </div>
+          <div class="service-card clay-card">
+            <div class="service-icon-wrap">
+              <span class="service-icon">&#9996;</span>
+            </div>
+            <h3 class="service-title">UI/UX Design</h3>
+            <p class="service-desc">Designing clean, intuitive, and user-focused digital interfaces.</p>
+          </div>
+          <div class="service-card clay-card">
+            <div class="service-icon-wrap">
+              <span class="service-icon">&#9889;</span>
+            </div>
+            <h3 class="service-title">Automation &amp; Data</h3>
+            <p class="service-desc">Automating workflows and using data to improve digital products and decisions.</p>
+          </div>
+          <div class="service-card clay-card">
+            <div class="service-icon-wrap">
+              <span class="service-icon">&#9879;</span>
+            </div>
+            <h3 class="service-title">Infrastructure &amp; Server Management</h3>
+            <p class="service-desc">Managing hosting, servers, application updates, data systems, and operational infrastructure.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 3: PROJECTS -->
+    <section class="page" id="page-projects" data-page="3">
+      <div class="page-inner projects-inner">
+        <h2 class="section-heading">Our Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card clay-card">
+            <div class="project-content">
+              <h3 class="project-title">
+                <button class="project-title-btn" data-name="Alumni AI Beta" data-desc="Alumni AI Beta is the first public beta of Team Alum's AI platform, designed to provide students with an intelligent AI assistant and useful digital tools in one accessible platform. It represents the first working stage of Team Alum's larger Alumni AI vision." data-url="https://app-7r4li86z9ibl.appmedo.com" data-status="Public Beta">Alumni AI Beta</button>
+              </h3>
+              <p class="project-desc">The first public beta of Team Alum's AI platform for students.</p>
+              <a href="https://app-7r4li86z9ibl.appmedo.com" class="project-link btn-clay-sm" target="_blank" rel="noopener">Open</a>
+            </div>
+          </div>
+          <div class="project-card clay-card">
+            <div class="project-content">
+              <h3 class="project-title">
+                <button class="project-title-btn" data-name="Nexora — Students Platform" data-desc="Nexora is a student-focused digital platform created by Team Alum to provide useful tools and experiences for students. It is part of the team's effort to build practical technology around student needs, productivity, and digital organization." data-url="https://app-c0l89hyi92pt.appmedo.com" data-status="Live">Nexora — Students Platform</button>
+              </h3>
+              <p class="project-desc">A student-focused digital platform with tools and experiences.</p>
+              <a href="https://app-c0l89hyi92pt.appmedo.com" class="project-link btn-clay-sm" target="_blank" rel="noopener">Open</a>
+            </div>
+          </div>
+          <div class="project-card clay-card">
+            <div class="project-content">
+              <h3 class="project-title">
+                <button class="project-title-btn" data-name="Prompt Engineering Blueprint" data-desc="Prompt Engineering Blueprint is a Team Alum Publishing project focused on prompt engineering and practical AI interaction. The dedicated bookstore provides access to the publication and represents Team Alum's work in AI education and knowledge sharing." data-url="https://teamalum-bookstore.vercel.app/" data-status="Available">Prompt Engineering Blueprint</button>
+              </h3>
+              <p class="project-desc">A publication on prompt engineering and practical AI interaction.</p>
+              <a href="https://teamalum-bookstore.vercel.app/" class="project-link btn-clay-sm" target="_blank" rel="noopener">Open</a>
+            </div>
+          </div>
+          <div class="project-card clay-card">
+            <div class="project-content">
+              <h3 class="project-title">
+                <button class="project-title-btn" data-name="Alumni AI — Self-Hosted" data-desc="The next major stage of Alumni AI. After the beta version, Team Alum is developing an independently hosted version of Alumni AI with greater control over infrastructure, data systems, platform architecture, and future AI capabilities." data-url="" data-status="Coming Soon">Alumni AI — Self-Hosted</button>
+              </h3>
+              <p class="project-desc">The next major stage of Alumni AI with full self-hosted infrastructure.</p>
+              <span class="project-status-pill">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 4: ASK US -->
+    <section class="page" id="page-ask" data-page="4">
+      <div class="page-inner ask-inner">
+        <div class="ask-card clay-card" id="ask-card">
+          <h2 class="section-heading">Have a Question?</h2>
+          <p class="ask-subtext">Ask our team anything — we personally read and respond to every question.</p>
+          <form class="ask-form" id="ask-form" novalidate>
+            <div class="input-well">
+              <label for="ask-name" class="sr-only">Name</label>
+              <input type="text" id="ask-name" name="name" placeholder="Your name" required autocomplete="name">
+            </div>
+            <div class="input-well">
+              <label for="ask-question" class="sr-only">Your Question</label>
+              <textarea id="ask-question" name="question" placeholder="Type your question here..." rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-clay submit-btn">Submit Question</button>
+          </form>
+
+          <!-- Success state (hidden by default) -->
+          <div class="ask-success hidden" id="ask-success">
+            <div class="success-check" aria-label="Success checkmark">
+              <svg viewBox="0 0 52 52" class="check-svg">
+                <circle cx="26" cy="26" r="24" fill="none" stroke="#6FCF97" stroke-width="2.5"/>
+                <path class="check-path" fill="none" stroke="#6FCF97" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M15 27l7 7 15-15"/>
+              </svg>
+            </div>
+            <p class="success-text">Your question has been submitted!</p>
+            <button class="btn-clay ask-another-btn" id="ask-another-btn">Ask another question?</button>
+          </div>
+
+          <!-- Error state (hidden by default) -->
+          <div class="ask-error hidden" id="ask-error">
+            <p class="error-text">Something went wrong — try again</p>
+            <button class="btn-clay retry-btn" id="retry-btn">Retry</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 5: CONTACT -->
+    <section class="page" id="page-contact" data-page="5">
+      <div class="page-inner contact-inner">
+        <div class="contact-card clay-card" id="contact-card">
+          <h2 class="section-heading">Get in Touch</h2>
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="input-well">
+              <label for="contact-name" class="sr-only">Name</label>
+              <input type="text" id="contact-name" name="name" placeholder="Your name" required autocomplete="name">
+            </div>
+            <div class="input-well">
+              <label for="contact-email" class="sr-only">Email</label>
+              <input type="email" id="contact-email" name="email" placeholder="your@email.com" required autocomplete="email">
+            </div>
+            <div class="input-well">
+              <label for="contact-message" class="sr-only">Message</label>
+              <textarea id="contact-message" name="message" placeholder="Your message..." rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-clay submit-btn">Send Message</button>
+          </form>
+
+          <!-- Contact success -->
+          <div class="contact-success hidden" id="contact-success">
+            <div class="success-check" aria-label="Success checkmark">
+              <svg viewBox="0 0 52 52" class="check-svg">
+                <circle cx="26" cy="26" r="24" fill="none" stroke="#6FCF97" stroke-width="2.5"/>
+                <path class="check-path" fill="none" stroke="#6FCF97" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M15 27l7 7 15-15"/>
+              </svg>
+            </div>
+            <p class="success-text">Thanks, we'll be in touch!</p>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="https://www.instagram.com/sudarshan.css/" class="social-pill clay-pill" aria-label="Instagram" target="_blank" rel="noopener">Instagram</a>
+          <span class="social-pill clay-pill social-soon" aria-label="LinkedIn coming soon">LinkedIn</span>
+          <span class="social-pill clay-pill social-soon" aria-label="GitHub coming soon">GitHub</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Team Alum. All Rights Reserved.</p>
+  </footer>
+
+  <!-- ==================== PROJECT DETAIL MODAL ==================== -->
+  <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card clay-card">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+      <span class="modal-status" id="modal-status"></span>
+      <h2 class="modal-title" id="modal-title"></h2>
+      <p class="modal-desc" id="modal-desc"></p>
+      <div class="modal-actions">
+        <a class="btn-clay modal-open-btn hidden" id="modal-open-btn" target="_blank" rel="noopener">Open Project</a>
+        <span class="modal-coming-soon hidden" id="modal-coming-soon">Coming Soon</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

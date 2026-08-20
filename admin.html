@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Alum — Admin</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==================== VARIABLES ==================== */
+    :root {
+      --bg-base: #EDEAF6;
+      --bg-secondary: #E4F3EA;
+      --accent-lavender: #B9AEE8;
+      --accent-mint: #9FE3C0;
+      --accent-peach: #F7C9A6;
+      --text-primary: #2E2A3D;
+      --text-secondary: #6E6784;
+      --shadow-dark: rgba(163, 155, 210, 0.45);
+      --shadow-light: rgba(255, 255, 255, 0.9);
+      --success: #6FCF97;
+      --font-heading: 'Fraunces', 'Poppins', sans-serif;
+      --font-ui: 'Poppins', sans-serif;
+      --font-body: 'Inter', 'Plus Jakarta Sans', sans-serif;
+      --neo-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+      --neo-inset: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light);
+      --clay-shadow: 8px 8px 20px var(--shadow-dark), -8px -8px 20px var(--shadow-light), 0 0 0 1px rgba(255,255,255,0.15);
+      --radius-md: 20px;
+      --radius-card: 32px;
+      --radius-pill: 50px;
+    }
+
+    /* ==================== RESET ==================== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      min-height: 100vh;
+      font-family: var(--font-body);
+      color: var(--text-primary);
+      background: var(--bg-base);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 { font-family: var(--font-heading); line-height: 1.2; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+
+    /* ==================== LAYOUT ==================== */
+    .admin-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    /* ==================== AUTH CARD ==================== */
+    .auth-card {
+      max-width: 420px;
+      margin: 120px auto 0;
+      text-align: center;
+      background: var(--bg-base);
+      border-radius: var(--radius-card);
+      box-shadow: var(--clay-shadow);
+      padding: 48px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .auth-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 40%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.35) 0%, transparent 100%);
+      border-radius: var(--radius-card) var(--radius-card) 0 0;
+      pointer-events: none;
+    }
+
+    .auth-card h2 {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .auth-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .google-btn {
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      padding: 14px 36px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-lavender);
+      color: #fff;
+      box-shadow: 6px 6px 16px var(--shadow-dark), -4px -4px 12px var(--shadow-light),
+                  inset 0 2px 0 rgba(255,255,255,0.25);
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+    }
+
+    .google-btn:hover {
+      transform: scale(1.03) translateY(-2px);
+      box-shadow: 8px 8px 22px var(--shadow-dark), -6px -6px 16px var(--shadow-light),
+                  inset 0 2px 0 rgba(255,255,255,0.3);
+    }
+
+    .google-btn:active {
+      transform: scale(0.98);
+      box-shadow: var(--neo-inset);
+    }
+
+    .denied-msg {
+      color: #e57373;
+      font-size: 0.9rem;
+      margin-top: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ==================== DASHBOARD ==================== */
+    .dash-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .dash-header h1 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+    }
+
+    .dash-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .dash-email {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-family: var(--font-ui);
+    }
+
+    .signout-btn {
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: var(--radius-pill);
+      background: var(--bg-base);
+      color: var(--text-secondary);
+      box-shadow: 4px 4px 10px var(--shadow-dark), -4px -4px 10px var(--shadow-light);
+      transition: all 0.25s ease;
+    }
+
+    .signout-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
+      color: var(--text-primary);
+    }
+
+    .signout-btn:active {
+      transform: translateY(0);
+      box-shadow: var(--neo-inset);
+    }
+
+    /* Filter tabs */
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+
+    .filter-tab {
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      background: var(--bg-base);
+      color: var(--text-secondary);
+      box-shadow: 3px 3px 8px var(--shadow-dark), -3px -3px 8px var(--shadow-light);
+      transition: all 0.2s ease;
+    }
+
+    .filter-tab:hover {
+      transform: translateY(-1px);
+      color: var(--text-primary);
+    }
+
+    .filter-tab.active {
+      box-shadow: var(--neo-inset);
+      background: var(--accent-lavender);
+      color: #fff;
+    }
+
+    .new-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 22px;
+      height: 22px;
+      padding: 0 6px;
+      border-radius: 11px;
+      background: var(--accent-peach);
+      color: var(--text-primary);
+      font-family: var(--font-ui);
+      font-weight: 700;
+      font-size: 0.7rem;
+      margin-left: 4px;
+    }
+
+    /* Question cards */
+    .questions-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .question-card {
+      background: var(--bg-base);
+      border-radius: var(--radius-card);
+      box-shadow: var(--clay-shadow);
+      padding: 24px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.25s ease;
+    }
+
+    .question-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 30%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, transparent 100%);
+      border-radius: var(--radius-card) var(--radius-card) 0 0;
+      pointer-events: none;
+    }
+
+    .question-card.answered {
+      opacity: 0.55;
+    }
+
+    .question-card.answered:hover {
+      opacity: 0.8;
+    }
+
+    .q-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .q-name {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .q-status {
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+    }
+
+    .q-status.new {
+      background: var(--accent-mint);
+      color: var(--text-primary);
+    }
+
+    .q-status.answered-badge {
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+    }
+
+    .q-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .q-time {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      opacity: 0.7;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .q-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .q-btn {
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: var(--radius-pill);
+      background: var(--bg-base);
+      color: var(--text-secondary);
+      box-shadow: 3px 3px 8px var(--shadow-dark), -3px -3px 8px var(--shadow-light);
+      transition: all 0.2s ease;
+    }
+
+    .q-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 4px 4px 10px var(--shadow-dark), -4px -4px 10px var(--shadow-light);
+      color: var(--text-primary);
+    }
+
+    .q-btn:active {
+      box-shadow: var(--neo-inset);
+      transform: translateY(0);
+    }
+
+    .q-btn.copy-btn {
+      background: var(--accent-lavender);
+      color: #fff;
+    }
+
+    .q-btn.copy-btn:hover { color: #fff; }
+
+    .q-btn.mark-btn {
+      background: var(--accent-mint);
+      color: var(--text-primary);
+    }
+
+    .hidden { display: none !important; }
+
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--text-primary);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 9999;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    @media (max-width: 600px) {
+      .admin-wrap { padding: 24px 12px 40px; }
+      .auth-card { margin-top: 60px; padding: 32px 20px; }
+      .dash-header { flex-direction: column; align-items: flex-start; }
+      .question-card { padding: 20px 16px; }
+      .q-actions { flex-direction: column; }
+      .q-btn { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Auth screen -->
+  <div id="auth-screen">
+    <div class="auth-card">
+      <h2>Team Alum Admin</h2>
+      <p>Sign in to view submitted questions.</p>
+      <button class="google-btn" id="google-login-btn">Sign in with Google</button>
+      <p class="denied-msg hidden" id="denied-msg">This account doesn't have access.</p>
+    </div>
+  </div>
+
+  <!-- Dashboard (hidden until auth) -->
+  <div id="dashboard" class="admin-wrap hidden">
+    <div class="dash-header">
+      <h1>Team Alum — Questions</h1>
+      <div class="dash-meta">
+        <span class="dash-email" id="dash-email"></span>
+        <button class="signout-btn" id="signout-btn">Sign out</button>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-tab active" data-filter="all">All <span class="new-badge" id="badge-all"></span></button>
+      <button class="filter-tab" data-filter="new">New <span class="new-badge" id="badge-new"></span></button>
+      <button class="filter-tab" data-filter="answered">Answered</button>
+    </div>
+
+    <div class="questions-list" id="questions-list">
+      <div class="empty-state" id="empty-state">No questions yet.</div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script type="module">
+    import { supabase } from './supabase-config.js';
+
+    // ==================== DOM ====================
+    const authScreen = document.getElementById('auth-screen');
+    const dashboard = document.getElementById('dashboard');
+    const googleLoginBtn = document.getElementById('google-login-btn');
+    const signoutBtn = document.getElementById('signout-btn');
+    const dashEmail = document.getElementById('dash-email');
+    const questionsList = document.getElementById('questions-list');
+    const emptyState = document.getElementById('empty-state');
+    const deniedMsg = document.getElementById('denied-msg');
+    const toast = document.getElementById('toast');
+    const badgeAll = document.getElementById('badge-all');
+    const badgeNew = document.getElementById('badge-new');
+    const filterTabs = document.querySelectorAll('.filter-tab');
+
+    const ADMIN_EMAIL = 'socialsudarshan8@gmail.com';
+    let allQuestions = [];
+    let currentFilter = 'all';
+    let channel = null;
+
+    // ==================== AUTH ====================
+    googleLoginBtn.addEventListener('click', async () => {
+      googleLoginBtn.textContent = 'Signing in...';
+      await supabase.auth.signInWithOAuth({ provider: 'google' });
+    });
+
+    signoutBtn.addEventListener('click', async () => {
+      await supabase.auth.signOut();
+      if (channel) supabase.removeChannel(channel);
+      allQuestions = [];
+      dashboard.classList.add('hidden');
+      authScreen.classList.remove('hidden');
+      authScreen.querySelector('.auth-card').style.display = '';
+    });
+
+    async function checkSession() {
+      const { data: { user } } = await supabase.auth.getUser();
+
+      if (!user) {
+        authScreen.classList.remove('hidden');
+        dashboard.classList.add('hidden');
+        return;
+      }
+
+      if (user.email !== ADMIN_EMAIL) {
+        await supabase.auth.signOut();
+        authScreen.classList.remove('hidden');
+        dashboard.classList.add('hidden');
+        deniedMsg.classList.remove('hidden');
+        googleLoginBtn.textContent = 'Sign in with Google';
+        return;
+      }
+
+      // Authorized
+      authScreen.classList.add('hidden');
+      dashboard.classList.remove('hidden');
+      dashEmail.textContent = user.email;
+      await loadQuestions();
+      subscribeRealtime();
+    }
+
+    checkSession();
+
+    // ==================== LOAD QUESTIONS ====================
+    async function loadQuestions() {
+      const { data, error } = await supabase
+        .from('questions')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (error) {
+        console.error('Load error:', error);
+        showToast('Failed to load questions');
+        return;
+      }
+
+      allQuestions = data || [];
+      renderQuestions();
+    }
+
+    // ==================== REALTIME ====================
+    function subscribeRealtime() {
+      channel = supabase.channel('questions-changes')
+        .on('postgres_changes', {
+          event: 'INSERT',
+          schema: 'public',
+          table: 'questions'
+        }, (payload) => {
+          allQuestions.unshift(payload.new);
+          renderQuestions();
+          showToast('New question received!');
+        })
+        .subscribe();
+    }
+
+    // ==================== RENDER ====================
+    function renderQuestions() {
+      const filtered = currentFilter === 'all'
+        ? allQuestions
+        : currentFilter === 'new'
+          ? allQuestions.filter(q => !q.answered)
+          : allQuestions.filter(q => q.answered);
+
+      const newCount = allQuestions.filter(q => !q.answered).length;
+      badgeAll.textContent = allQuestions.length || '';
+      badgeNew.textContent = newCount || '';
+
+      if (filtered.length === 0) {
+        questionsList.innerHTML = '';
+        questionsList.appendChild(emptyState);
+        emptyState.classList.remove('hidden');
+        emptyState.textContent = currentFilter === 'new'
+          ? 'No new questions.'
+          : currentFilter === 'answered'
+            ? 'No answered questions yet.'
+            : 'No questions yet.';
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      questionsList.innerHTML = '';
+
+      filtered.forEach(q => {
+        const card = document.createElement('div');
+        card.className = 'question-card' + (q.answered ? ' answered' : '');
+        card.innerHTML = `
+          <div class="q-header">
+            <span class="q-name">${escapeHtml(q.name)}</span>
+            <span class="q-status ${q.answered ? 'answered-badge' : 'new'}">${q.answered ? 'Answered' : 'New'}</span>
+          </div>
+          <p class="q-text">${escapeHtml(q.question)}</p>
+          <p class="q-time">${formatDate(q.created_at)}</p>
+          <div class="q-actions">
+            <button class="q-btn copy-btn" data-id="${q.id}" data-name="${escapeAttr(q.name)}" data-question="${escapeAttr(q.question)}">Copy for Story</button>
+            ${!q.answered ? `<button class="q-btn mark-btn" data-id="${q.id}">Mark as Answered</button>` : ''}
+          </div>
+        `;
+        questionsList.appendChild(card);
+      });
+
+      // Attach event listeners
+      questionsList.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const text = `${btn.dataset.name}: "${btn.dataset.question}"`;
+          try {
+            await navigator.clipboard.writeText(text);
+            showToast('Copied to clipboard!');
+          } catch {
+            // Fallback
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            showToast('Copied to clipboard!');
+          }
+        });
+      });
+
+      questionsList.querySelectorAll('.mark-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const id = btn.dataset.id;
+          const { error } = await supabase
+            .from('questions')
+            .update({ answered: true })
+            .eq('id', id);
+
+          if (error) {
+            console.error('Update error:', error);
+            showToast('Failed to mark as answered');
+            return;
+          }
+
+          const q = allQuestions.find(q => q.id === id);
+          if (q) q.answered = true;
+          renderQuestions();
+          showToast('Marked as answered');
+        });
+      });
+    }
+
+    // ==================== FILTERS ====================
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        filterTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currentFilter = tab.dataset.filter;
+        renderQuestions();
+      });
+    });
+
+    // ==================== HELPERS ====================
+    function formatDate(iso) {
+      const d = new Date(iso);
+      const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      const month = months[d.getMonth()];
+      const day = d.getDate();
+      const year = d.getFullYear();
+      let hours = d.getHours();
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12 || 12;
+      const mins = d.getMinutes().toString().padStart(2, '0');
+      return `${month} ${day}, ${year} · ${hours}:${mins} ${ampm}`;
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    function escapeAttr(str) {
+      return str.replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+  </script>
+
+</body>
+</html>
