@@ -470,7 +470,10 @@
     // ==================== AUTH ====================
     googleLoginBtn.addEventListener('click', async () => {
       googleLoginBtn.textContent = 'Signing in...';
-      await supabase.auth.signInWithOAuth({ provider: 'google' });
+      await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: { redirectTo: window.location.origin + '/admin.html' }
+      });
     });
 
     signoutBtn.addEventListener('click', async () => {
