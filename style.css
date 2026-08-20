@@ -515,50 +515,198 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* ==================== RESPONSIVE ==================== */
+
+/* Tablet (768px and below) */
 @media (max-width: 768px) {
-  .navbar {
-    top: 12px; padding: 8px 10px 8px 14px; gap: 10px;
-    flex-wrap: nowrap; max-width: calc(100vw - 20px);
+  /* Make pages scrollable when content overflows */
+  .page {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .logo-text { font-size: 1rem; }
+  .page-inner {
+    padding: 90px 20px 60px;
+    min-height: 100vh;
+    height: auto;
+    justify-content: flex-start;
+  }
 
-  .nav-pill { font-size: 0.7rem; padding: 8px 12px; }
+  /* Navbar */
+  .navbar {
+    top: 10px; padding: 8px 10px 8px 14px; gap: 8px;
+    flex-wrap: nowrap; max-width: calc(100vw - 20px);
+  }
+  .logo-text { font-size: 1rem; }
+  .nav-pill { font-size: 0.72rem; padding: 8px 14px; }
   .nav-pills { gap: 4px; }
 
-  .founders-grid { grid-template-columns: 1fr; max-width: 360px; }
-  .services-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .projects-grid { grid-template-columns: 1fr; max-width: 400px; }
+  /* Home */
+  .home-title { font-size: clamp(2.2rem, 9vw, 3.5rem); margin-bottom: 14px; }
+  .home-tagline { font-size: clamp(0.88rem, 2.5vw, 1.1rem); margin-bottom: 28px; }
+  .home-future-note { font-size: 0.8rem; margin-top: -16px; margin-bottom: 24px; }
+  .cta-btn { font-size: 0.9rem; padding: 13px 32px; }
 
-  .page-inner { padding: 100px 16px 30px; }
+  /* Blobs - smaller on mobile */
+  .blob-1 { width: 260px; height: 260px; }
+  .blob-2 { width: 200px; height: 200px; }
+  .blob-3 { width: 160px; height: 160px; }
 
-  .home-title { font-size: clamp(2.4rem, 10vw, 4rem); }
-
+  /* Cards */
   .clay-card { padding: 24px 20px; border-radius: var(--radius-lg); }
   .clay-card:hover { transform: scale(1.01) translateY(-2px); }
 
-  .ask-card, .contact-card { padding: 28px 20px; }
+  /* Section headings */
+  .section-heading { font-size: clamp(1.4rem, 4vw, 2rem); margin-bottom: 16px; }
 
-  .modal-card { padding: 32px 24px; }
+  /* Founders - 2 columns on tablet */
+  .founders-grid {
+    grid-template-columns: repeat(2, 1fr); gap: 16px;
+    max-width: 600px;
+  }
+  .founder-card { padding: 28px 18px 22px; }
+  .founder-avatar { width: 76px; height: 76px; }
+  .avatar-initials { font-size: 1.3rem; }
+  .founder-name { font-size: 1rem; }
+  .founder-bio { font-size: 0.82rem; }
+  .founder-tag { font-size: 0.6rem; padding: 3px 8px; }
+
+  /* Services - 2 columns */
+  .services-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 560px; }
+  .service-card { padding: 24px 16px; }
+  .service-icon-wrap { width: 52px; height: 52px; border-radius: 16px; font-size: 1.3rem; margin-bottom: 12px; }
+  .service-title { font-size: 0.95rem; margin-bottom: 6px; }
+  .service-desc { font-size: 0.82rem; }
+
+  /* Projects - 1 column */
+  .projects-grid { grid-template-columns: 1fr; max-width: 440px; }
+  .project-card { padding: 24px; }
+  .project-title { font-size: 1.05rem; }
+  .project-desc { font-size: 0.85rem; }
+
+  /* Ask Us */
+  .ask-card { padding: 32px 24px; max-width: 460px; }
+  .ask-subtext { font-size: 0.88rem; }
+  .input-well input, .input-well textarea { font-size: 0.9rem; padding: 12px 14px; }
+
+  /* Contact */
+  .contact-card { padding: 32px 24px; max-width: 460px; }
+  .social-links { gap: 8px; }
+  .social-pill { font-size: 0.75rem; padding: 9px 18px; }
+
+  /* Modal */
+  .modal-overlay { padding: 20px; }
+  .modal-card { padding: 32px 24px; max-width: 480px; }
   .modal-title { font-size: 1.25rem; }
+  .modal-desc { font-size: 0.88rem; }
 
-  .blob-1 { width: 250px; height: 250px; }
-  .blob-2 { width: 200px; height: 200px; }
-  .blob-3 { width: 160px; height: 160px; }
+  /* Footer */
+  .site-footer { font-size: 0.65rem; padding: 8px 12px; }
 }
 
+/* Mobile (480px and below) */
 @media (max-width: 480px) {
-  .services-grid { grid-template-columns: 1fr; max-width: 320px; }
-  .founders-grid { max-width: 300px; }
-  .founder-card { padding: 24px 16px 20px; }
-  .founder-avatar { width: 72px; height: 72px; }
-  .avatar-initials { font-size: 1.2rem; }
-  .nav-pill { font-size: 0.65rem; padding: 7px 10px; letter-spacing: 0.04em; }
-  .navbar { gap: 6px; padding: 6px 8px 6px 12px; }
+  .page-inner {
+    padding: 80px 14px 50px;
+  }
 
-  .modal-overlay { padding: 16px; }
-  .modal-card { padding: 28px 20px; }
-  .modal-title { font-size: 1.15rem; }
+  /* Navbar - compact */
+  .navbar {
+    top: 8px; gap: 5px; padding: 5px 6px 5px 10px;
+    max-width: calc(100vw - 16px);
+  }
+  .logo-text { font-size: 0.88rem; padding-right: 4px; }
+  .nav-pill { font-size: 0.62rem; padding: 6px 10px; letter-spacing: 0.03em; }
+  .nav-pills { gap: 3px; }
+
+  /* Home */
+  .home-title { font-size: clamp(2rem, 11vw, 3rem); margin-bottom: 10px; }
+  .home-tagline { font-size: 0.85rem; margin-bottom: 22px; }
+  .home-future-note { font-size: 0.75rem; }
+  .cta-btn { font-size: 0.82rem; padding: 12px 28px; }
+
+  /* Blobs - even smaller */
+  .blob-1 { width: 180px; height: 180px; }
+  .blob-2 { width: 140px; height: 140px; }
+  .blob-3 { width: 110px; height: 110px; }
+
+  /* Cards */
+  .clay-card { padding: 20px 16px; border-radius: var(--radius-md); }
+
+  /* Section headings */
+  .section-heading { font-size: clamp(1.2rem, 5vw, 1.6rem); margin-bottom: 12px; }
+
+  /* Founders - single column */
+  .founders-grid { grid-template-columns: 1fr; max-width: 300px; }
+  .founder-card { padding: 22px 16px 18px; }
+  .founder-avatar { width: 64px; height: 64px; }
+  .avatar-initials { font-size: 1.1rem; }
+  .founder-name { font-size: 0.92rem; }
+  .founder-role { font-size: 0.65rem; }
+  .founder-bio { font-size: 0.78rem; line-height: 1.5; }
+
+  /* Services - single column */
+  .services-grid { grid-template-columns: 1fr; max-width: 300px; }
+  .service-card { padding: 20px 14px; }
+  .service-icon-wrap { width: 44px; height: 44px; border-radius: 14px; font-size: 1.15rem; margin-bottom: 10px; }
+  .service-title { font-size: 0.88rem; }
+  .service-desc { font-size: 0.78rem; line-height: 1.45; }
+
+  /* Projects */
+  .projects-grid { max-width: 340px; gap: 14px; }
+  .project-card { padding: 20px 16px; }
+  .project-title { font-size: 0.95rem; }
+  .project-desc { font-size: 0.8rem; margin-bottom: 12px; }
+  .project-title-btn { font-size: 0.95rem; }
+
+  /* Ask Us */
+  .ask-card { padding: 24px 16px; }
+  .ask-subtext { font-size: 0.82rem; margin-bottom: 20px; }
+  .ask-card h2 { font-size: 1.3rem; }
+  .input-well { margin-bottom: 12px; }
+  .input-well input, .input-well textarea { font-size: 0.85rem; padding: 11px 12px; }
+  .btn-clay { font-size: 0.85rem; padding: 12px 28px; }
+
+  /* Contact */
+  .contact-card { padding: 24px 16px; }
+  .contact-card h2 { font-size: 1.3rem; }
+  .social-pill { font-size: 0.7rem; padding: 8px 14px; }
+
+  /* Modal */
+  .modal-overlay { padding: 12px; }
+  .modal-card { padding: 24px 18px; }
+  .modal-title { font-size: 1.1rem; }
+  .modal-desc { font-size: 0.82rem; }
+  .modal-close { top: 10px; right: 14px; width: 32px; height: 32px; font-size: 1.3rem; }
+
+  /* Footer */
+  .site-footer { font-size: 0.6rem; padding: 6px 10px; }
+}
+
+/* Small mobile (360px and below) */
+@media (max-width: 360px) {
+  .page-inner { padding: 75px 10px 45px; }
+
+  .navbar { top: 6px; padding: 4px 5px 4px 8px; gap: 3px; }
+  .logo-text { font-size: 0.8rem; }
+  .nav-pill { font-size: 0.58rem; padding: 5px 8px; }
+
+  .home-title { font-size: 1.8rem; }
+  .home-tagline { font-size: 0.78rem; }
+  .cta-btn { font-size: 0.78rem; padding: 10px 24px; }
+
+  .founders-grid { max-width: 260px; gap: 12px; }
+  .founder-card { padding: 18px 12px 14px; }
+  .founder-avatar { width: 56px; height: 56px; }
+  .avatar-initials { font-size: 1rem; }
+
+  .services-grid { max-width: 260px; }
+  .service-card { padding: 16px 12px; }
+
+  .projects-grid { max-width: 280px; gap: 10px; }
+  .project-card { padding: 16px 12px; }
+
+  .ask-card, .contact-card { padding: 20px 12px; }
 }
 
 /* ==================== ACCESSIBILITY ==================== */
