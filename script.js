@@ -278,6 +278,19 @@
     }
   });
 
+  // ==================== VISIT TRACKING ====================
+  async function trackVisit() {
+    try {
+      if (sessionStorage.getItem('ta_visit_tracked')) return;
+      sessionStorage.setItem('ta_visit_tracked', '1');
+      const { supabase } = await import('./supabase-config.js');
+      await supabase.rpc('increment_visits');
+    } catch (err) {
+      console.warn('Visit tracking failed:', err);
+    }
+  }
+  trackVisit();
+
   // ==================== INITIAL STATE ====================
   // Ensure first page is visible immediately
   pages[0].classList.add('active');

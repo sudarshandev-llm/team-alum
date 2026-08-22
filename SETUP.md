@@ -54,6 +54,14 @@ to authenticated
 using (auth.jwt() ->> 'email' = 'socialsudarshan8@gmail.com');
 ```
 
+### Step 4b: Enable the Visitor Counter
+1. In Supabase dashboard → SQL Editor → New query
+2. Open `visits-setup.sql`, copy **all** of it, paste and run
+
+This creates a `site_stats` table and an `increment_visits()` function. The main site automatically counts each visit (once per browser session) — no extra code needed.
+
+To see the count: sign in at `/admin.html` → "Site Visitors" card (auto-refreshes every 60s, or click ↻).
+
 ### Step 5: Enable Google OAuth (for admin login)
 1. Go to https://console.cloud.google.com
 2. Create a new project (or use existing) → name it anything (e.g. "team-alum-auth")
