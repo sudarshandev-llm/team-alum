@@ -52,6 +52,8 @@
     const duration = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--duration-page')) * 1000 || 500;
     setTimeout(() => {
       oldPage.classList.remove('active', 'transitioning-out', 'slide-out-left', 'slide-out-right');
+      oldPage.scrollTop = 0;
+      newPage.scrollTop = 0;
       newPage.classList.remove('slide-in-left', 'slide-in-right');
       newPage.style.transform = '';
       newPage.style.opacity = '';
