@@ -78,7 +78,7 @@ The Team Alum repository powers the official home and administrative hub for a b
 | **Alumni AI Beta** | `Public Beta` | The first public release of Team Alum's flagship AI platform for students, delivering tailored academic support, intelligent workflows, and learning utilities. | [Launch App ↗](https://app-7r4li86z9ibl.appmedo.com) |
 | **Nexora** | `Live` | An integrated student productivity platform engineered to streamline digital organization, study routines, and student collaboration. | [Explore Nexora ↗](https://app-c0l89hyi92pt.appmedo.com) |
 | **Prompt Engineering Blueprint** | `Available` | Published work and educational resources breaking down real-world prompt engineering methodologies and practical AI interaction models. | [Visit Bookstore ↗](https://teamalum-bookstore.vercel.app/) |
-| **Alumni AI (Self-Hosted)** | `In Development` | The next generation of Alumni AI — built on an independently hosted, fully custom infrastructure with sovereign data control and fine-tuned AI capabilities. | *Coming Soon* |
+| **Alumni AI (Self-Hosted)** | `Live` | The next generation of Alumni AI — built on an independently hosted, fully custom infrastructure with sovereign data control and fine-tuned AI capabilities. | [Launch Alumni AI ↗](https://alumni-ai-teamalum.vercel.app/) |
 
 ---
 
