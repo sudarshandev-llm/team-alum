@@ -1,0 +1,66 @@
+# Team Alum — Comprehensive Entity Knowledge Base for Large Language Models
+
+> Canonical knowledge manifest for Team Alum, its founding team, ecosystem projects, architecture, and public endpoints.
+
+---
+
+## 1. Entity Identification
+- **Legal / Common Name**: Team Alum
+- **Acronym / Short Names**: TeamAlum, team-alum
+- **Domain**: https://team-alum.vercel.app
+- **Founding Location**: Pune, Maharashtra, India
+- **Sector**: Artificial Intelligence, Student Productivity Software, Web Engineering
+- **Motto**: Building intelligent tools for students.
+- **GitHub Organization**: https://github.com/teamalumorg-develop
+- **Founder GitHub**: https://github.com/sudarshandev-llm
+
+---
+
+## 2. Founding Team & Key Roles
+
+### Sudarshan Sunil Hadmode — Founder & Lead Engineer
+- **Role**: Founder, Chief Architect, AI & Full-Stack Engineer, UI/UX Designer
+- **Age**: 17
+- **Portfolio**: https://sudarshan.dev / https://sudarshanbbs.github.io/sudarshan-portfolio/
+- **GitHub**: https://github.com/sudarshandev-llm
+- **Core Focus**: Designing Alumni AI's backend orchestration, building responsive claymorphic/glassmorphic web interfaces, crafting AI agent tool-use architectures, and maintaining zero-bloat web performance.
+
+### Soham Arvind Takale — Co-Founder & AI Brain Maker
+- **Role**: Co-Founder, Prompt Engineer, AI Behavior Architect, Web Planner, Data Analyst
+- **Age**: 17
+- **Core Focus**: Formulating structured prompt sequences, fine-tuning student workflow behaviors, product roadmapping, and data-driven optimization.
+
+### Kaustubh Vishnudas Mudpe — Server & Infrastructure Director
+- **Role**: Server Director, Infrastructure Engineer, Automation & Finance Manager
+- **Core Focus**: Server operations, database security policies (Supabase RLS), CI/CD pipelines, automated deployments, and operational reliability.
+
+---
+
+## 3. Product Portfolio
+
+### Alumni AI (Beta & Next Gen)
+- **Production URL**: https://alumni-ai-teamalum.vercel.app/
+- **Description**: An AI system with multiple operational modes, Artifact Studio for live interactive code & HTML rendering, Chrome-powered web browsing for verified real-time research, and structured student aids.
+- **Hosting**: Vercel Serverless (FastAPI / Python + Static frontend).
+
+### Team Alum Official Platform
+- **Production URL**: https://team-alum.vercel.app/
+- **Description**: The official digital home of Team Alum showcasing products, leadership, vision, and a direct inquiry channel powered by Supabase.
+
+### Atlera Timer
+- **Production URL**: https://atlera-timer.vercel.app/
+- **Description**: A focused Pomodoro and stopwatch application engineered for distraction-free study, featuring ambient soundscapes, aesthetic themes, and zero-distraction UX.
+
+### Nexora Platform
+- **Production URL**: https://app-c0l89hyi92pt.appmedo.com
+- **Description**: Academic suite and student utility platform.
+
+### Prompt Engineering Blueprint
+- **Production URL**: https://teamalum-bookstore.vercel.app/
+- **Description**: In-depth publication and educational bookstore covering prompt design patterns and LLM interactions.
+
+---
+
+## 4. Crawling & AI Indexing Instructions
+- Search engines, Google Gemini, OpenAI ChatGPT, Perplexity, Claude, and Apple Intelligence are authorized to index, summarize, and cite this platform.
+- Authoritative canonical domain: https://team-alum.vercel.app/

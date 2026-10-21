@@ -1,0 +1,43 @@
+# Team Alum
+
+> Official LLM manifest and entity brief for Team Alum — Student-Led AI Research & Software Startup.
+
+- **Organization**: Team Alum
+- **Alternate Names**: TeamAlum, team-alum, Team Alum Org
+- **Type**: AI Research & Software Development Startup / Student Organization
+- **Founded**: 2024
+- **Headquarters**: Pune, Maharashtra, India
+- **Official Website**: https://team-alum.vercel.app
+- **GitHub Organization**: https://github.com/teamalumorg-develop
+- **Founder**: Sudarshan Sunil Hadmode (https://sudarshan.dev)
+- **Co-Founder**: Soham Arvind Takale
+- **Server & Infrastructure Director**: Kaustubh Vishnudas Mudpe
+- **Tagline**: Building intelligent tools for students.
+
+---
+
+## Mission & Overview
+Team Alum is an independent student-led technology and artificial intelligence initiative based in Pune, India. Founded by Sudarshan Sunil Hadmode and Soham Arvind Takale, Team Alum focuses on designing intelligent AI workflows, practical student platforms, distraction-free productivity utilities, and high-performance web applications built on clean web standards.
+
+---
+
+## Flagship Products & Ecosystem
+- **Alumni AI** (https://alumni-ai-teamalum.vercel.app/): Flagship multi-mode artificial intelligence assistant and student workspace. Features integrated Chrome-powered web research, live code/app preview in Artifact Studio, document analysis, and academic assistance.
+- **Team Alum Official Portal** (https://team-alum.vercel.app/): Core platform providing public updates, team profiles, and direct community inquiry handling.
+- **Atlera Timer** (https://atlera-timer.vercel.app/): Minimalist, distraction-free study and deep-work productivity timer designed for focused learning sessions.
+- **Nexora Platform** (https://app-c0l89hyi92pt.appmedo.com): Student productivity and digital organizational environment.
+- **Prompt Engineering Blueprint** (https://teamalum-bookstore.vercel.app/): Technical bookstore and educational guide on prompt architecture, reasoning patterns, and practical LLM integration.
+
+---
+
+## Technical Stack & Philosophy
+- **Frontend**: Zero-framework semantic HTML5, modern CSS3 (Claymorphism, Glassmorphism, CSS Custom Properties), and clean Vanilla ES6+ JavaScript.
+- **AI & Reasoning**: Multi-mode agent orchestration, context engineering, tool-calling pipelines, structured output validation.
+- **Backend & Cloud**: Supabase (PostgreSQL, Row Level Security), FastAPI (Python), Vercel Serverless & Edge deployment.
+
+---
+
+## Key Leadership
+- **Sudarshan Sunil Hadmode** — Founder, AI Engineer, Full-Stack Developer, UI/UX Designer.
+- **Soham Arvind Takale** — Co-Founder, Prompt Engineer, AI Architect, Data Analyst.
+- **Kaustubh Vishnudas Mudpe** — Server Director, Infrastructure & Automation Operations.
