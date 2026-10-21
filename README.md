@@ -145,10 +145,41 @@ team-alum/
 ├── schema.sql            # PostgreSQL schema, RLS policies, views, and auto-profile triggers
 ├── robots.txt            # Search engine directives (protects administrative routes)
 ├── sitemap.xml           # Verified public index mapping
+├── googlee30616999c39952b.html # Google Search Console HTML-tag verification file
 ├── vercel.json           # Edge deployment routing and cache header configuration
 ├── _redirects            # Fallback redirect rules
 └── SETUP.md              # Technical deployment and Supabase configuration guide
 ```
+
+---
+
+## 🔍 SEO & Google Search Console
+
+The platform is wired for **Google Search Console** ownership verification and organic search readiness.
+
+**Verification token:** `googlee30616999c39952b.html`
+
+Verification is applied via **both** supported methods, so either option in the Search Console UI will succeed:
+
+| Method | Location | Live URL |
+|---|---|---|
+| HTML file upload | `googlee30616999c39952b.html` (repo root) | https://team-alum.vercel.app/googlee30616999c39952b.html |
+| HTML tag | `<meta name="google-site-verification">` in `index.html` | https://team-alum.vercel.app/ |
+
+**Adding the property:**
+1. Open [search.google.com/search-console](https://search.google.com/search-console) → **Add property**.
+2. Choose **URL prefix** → `https://team-alum.vercel.app/` (or **Domain** → `team-alum.vercel.app`).
+3. Paste the token `googlee30616999c39952b.html` when prompted.
+4. Click **Verify**.
+
+**After verification:**
+- Submit `https://team-alum.vercel.app/sitemap.xml` under **Sitemaps** to accelerate indexing.
+- Use **URL Inspection → Request indexing** on the homepage.
+- Monitor queries, clicks, and coverage under **Performance**.
+
+**Notes:**
+- The verification file is deliberately excluded from `sitemap.xml` and is *not* blocked in `robots.txt`, so Googlebot can fetch it.
+- `robots.txt` explicitly allows `Googlebot` and `Google-Extended` while keeping `/admin` routes out of the index.
 
 ---
 
