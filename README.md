@@ -1,7 +1,7 @@
 <div align="center">
 
 # 🌟 Team Alum
-### *Building Intelligent Tools for Students — Crafted with Honesty & Passion*
+ — Crafted with Honesty & Passion*
 
 [![Live Website](https://img.shields.io/badge/Live_Site-team--alum.vercel.app-6366f1?style=for-the-badge&logo=vercel&logoColor=white)](https://team-alum.vercel.app)
 [![Alumni AI Beta](https://img.shields.io/badge/Alumni_AI-Public_Beta-10b981?style=for-the-badge&logo=openai&logoColor=white)](https://app-7r4li86z9ibl.appmedo.com)
